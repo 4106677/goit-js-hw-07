@@ -5,6 +5,8 @@ console.log(galleryItems);
 
 const gallery = document.querySelector(".gallery");
 
+let instance = {};
+
 const galleryItem = galleryItems
   .map(
     (item) =>
@@ -37,10 +39,24 @@ function lightbox(evt) {
 
   //   import * as basicLightbox from "basiclightbox";
 
-  const instance = basicLightbox.create(
+  instance = basicLightbox.create(
     `<div class="modal">
       <img src="${currentImage.dataset.source}" />
     </div>`
   );
   instance.show();
+
+  //   instance.close(() => window.addEventListener("click"));
+  //   window.addEventListener("click", onEscapePress);
+
+  //   function onEscapePress() {
+  //     instance.close;
+  //   }
 }
+
+// function closeModal(evt) {
+//   window.addEventListener("keydown", () => {
+//     if (evt.code === "Escape") {
+//       instance.close();
+//     }
+//   });
