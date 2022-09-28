@@ -27,12 +27,12 @@ gallery.insertAdjacentHTML("beforeend", galleryItem);
 
 gallery.addEventListener("click", onImageClick);
 
+const lightbox = new SimpleLightbox(".gallery a", {
+  captions: true,
+  captionsData: "alt",
+  captionDelay: 250,
+});
+
 function onImageClick(evt) {
   evt.preventDefault();
-
-  var lightbox = new SimpleLightbox(".gallery a", {
-    captions: true,
-    captionsData: "alt",
-    captionDelay: 250,
-  });
 }
